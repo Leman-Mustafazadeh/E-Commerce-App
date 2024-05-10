@@ -15,48 +15,11 @@
       "role": "client"
     },
     {
-      "id": "-TTxhWOAANRsAFaXV6mmt",
-      "username": "laman",
-      "password": "laman123",
-      "createdAt": "2024-05-09T18:32:31.303Z",
-      "email": "lmanmustafazad6@gmail.com",
-      "profileImg": "https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg",
-      "balance": "50",
-      "role": "client",
-      "basketItems": []
-    },
-    {
-      "id": "cZ7vJiH2mxnrt0Pjz-7lf",
-      "username": "laman",
-      "password": "laman123",
-      "createdAt": "2024-05-09T18:34:20.815Z",
-      "email": "lmanmustafazad6@gmail.com",
-      "profileImg": "https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg",
-      "balance": "50",
-      "role": "client",
-      "basketItems": []
-    },
-    {
-      "id": "zdpKKVvi2IHtO4XS_Khri",
-      "username": "laman",
-      "password": "laman123",
-      "createdAt": "2024-05-09T18:48:05.872Z",
-      "email": "lmanmustafazad6@gmail.com",
-      "profileImg": "https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg",
-      "balance": "50",
-      "role": "client",
-      "basketItems": []
-    },
-    {
-      "id": "OKDW_RPboQvjV8mpD4rVd",
-      "username": "laman",
-      "password": "laman123",
-      "createdAt": "2024-05-09T18:49:01.277Z",
-      "email": "lmanmustafazad6@gmail.com",
-      "profileImg": "https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg",
-      "balance": "40",
-      "role": "client",
-      "basketItems": []
+      "id": "3",
+      "username": "rena",
+      "email": "rena@gmail.com",
+      "password": "rena123",
+      "role": "super-admin "
     }
   ],
    "products":[

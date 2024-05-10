@@ -10,8 +10,8 @@ import { Link, useNavigate } from "react-router-dom";
 const UserNavbar = () => {
     
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" style={{backgroundColor:'blanchedalmond'}}>
+    <Box sx={{ flexGrow: 1 }} >
+      <AppBar position="static" style={{backgroundColor:'blanchedalmond',marginBottom:'30px'}}>
         <Toolbar>
           <IconButton
             size="large"
@@ -65,14 +65,7 @@ const UserNavbar = () => {
               UserLogin
             </Link>
           </Button>
-          <Button color="inherit">
-            <Link
-              style={{ textDecoration: "none", color: "white" }}
-              to={"/userproductdetail"}
-            >
-              UserProductDetail
-            </Link>
-          </Button>
+          
           <Button color="inherit">
             <Link
               style={{ textDecoration: "none", color: "white" }}

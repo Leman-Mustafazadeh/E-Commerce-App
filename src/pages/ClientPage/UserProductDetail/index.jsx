@@ -14,16 +14,20 @@ const UserProductDetail = () => {
 
   useEffect(()=>{
     getOne(endpoints.products,id).then((res)=>{
-      setGetData(res)
+      setGetData(res.data)
       console.log(res);
     })
   },[id])
   console.log(getData);
   return (
-    <div>
-      <Link to={"/userproducts"}>Go back</Link>
+    <div style={{width:'30%',margin:'50px auto'}}>
+      <Link to={"/userproducts"} style={{backgroundColor:'gray',padding:'8px 10px',textDecoration:'none',color:'white'}}>Go back</Link>
+      <img src={getData.imgSrc} alt=""  style={{width:'100%'}}/>
       <h1>{getData.name}</h1>
-      <p>{getData.description}</p>
+      <h3>{getData.description}</h3>
+      <h5>PRICE:  {getData.salePrice}</h5>
+      <h4>STOCKCOUNT:  {getData.stockCount}</h4>
+
     </div>
   )
 }
