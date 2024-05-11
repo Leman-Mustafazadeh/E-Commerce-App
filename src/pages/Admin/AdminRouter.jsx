@@ -27,7 +27,7 @@ const AdminRouter = () => {
   return (
     <div>
         <AdminNavbar adminId={adminId} setAdminId={setAdminId} setlocalStorageId={setlocalStorageId}localStorageId={localStorageId}/>
-        <Outlet context={[users,setUsers,adminId,setAdminId,localStorageId,setlocalStorageId]}/>
+        <Outlet context={[users,setUsers,adminId,setAdminId,localStorageId,setlocalStorageId,adProducts,setadProduct]}/>
     </div>
   )
 }
