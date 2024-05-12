@@ -40,11 +40,6 @@ const Products = () => {
       border: 0,
     },
   }));
-
- /*  function createData(name, calories, fat, carbs, protein) {
-    return { name, calories, fat, carbs, protein };
-  } */
-
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",

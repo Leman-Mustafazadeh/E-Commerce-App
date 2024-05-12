@@ -99,12 +99,9 @@ const Categories = () => {
 
   const handleSubmit = () => {
     patch(endpoints.categories,editCategory.id,editCategory);
-   const changeCategory = category.findIndex((x)=>x.id==editCategory.id)
-   const updaatedcategies=[...category]
-   updaatedcategies[changeCategory]=editCategory
-   setCategory(updaatedcategies)
+   
     handleClose();
-  };
+  }; 
   return (
     <div>
       <TableContainer component={Paper}>
