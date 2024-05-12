@@ -6,13 +6,14 @@ import { getAll } from "../../API";
 import endpoints from "../../API/base";
 
 const UserRouter = () => {
+   let localBasket =  JSON.parse(localStorage.getItem("basket"))
   const [localStorageUserId, setLocalStorageUserId] = useLocalStorage("UserId", null);
   const localUser = JSON.parse(localStorage.getItem("UserId"));
   const [handUsersId, setHandUsersId] = useState(localUser ? localUser : null);
   const [alluser, setAllUsers] = useState([]);
   const [userProduct, setUserProduct] = useState([]);
   const [messages, setMessages] = useState([]);
-
+  const [basketState , setBasketState] = useState(localBasket ? localBasket.length : 0);
   useEffect(() => {
     getAll(endpoints.users).then((res) => {
       setAllUsers(res.data);
@@ -22,12 +23,12 @@ const UserRouter = () => {
     });
   }, []);
 
-  console.log(userProduct);
+ 
 
   return (
     <div>
-      <UserNavbar />
-      <Outlet context={[messages, setMessages, alluser, setAllUsers, handUsersId, setHandUsersId, localStorageUserId, setLocalStorageUserId, userProduct, setUserProduct]} />
+      <UserNavbar basketState={basketState} setHandUsersId={setHandUsersId} handUsersId={handUsersId} setLocalStorageUserId={setLocalStorageUserId} />
+      <Outlet context={[localBasket,setBasketState,messages, setMessages, alluser, setAllUsers, handUsersId, setHandUsersId, localStorageUserId, setLocalStorageUserId, userProduct, setUserProduct]} />
     </div>
   );
 };

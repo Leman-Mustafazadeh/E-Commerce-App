@@ -6,7 +6,7 @@ import { toast } from 'react-toastify'
 import UserLoginSchema from '../../../validation/UserLogin'
 
 const UserLogin = () => {
-  const [messages, setMessages, alluser, setAllUsers, handUsersId, setHandUsersId, localStorageUserId, setLocalStorageUserId, userProduct, setUserProduct] = useOutletContext()
+  const [localBasket,setBasketState,messages, setMessages, alluser, setAllUsers, handUsersId, setHandUsersId, localStorageUserId, setLocalStorageUserId, userProduct, setUserProduct] = useOutletContext()
   const navigate = useNavigate()
 console.log(alluser);
   const formik = useFormik({
@@ -15,9 +15,9 @@ console.log(alluser);
       password:''
     },
     onSubmit:(values) => {
-      console.log(values);
+     
       const foundUser = alluser.find((x) => x.username === values.username && x.password === values.password)
-      console.log(foundUser);
+     
       if(foundUser){
         if(foundUser.role === 'client'){
           setHandUsersId(foundUser.id)

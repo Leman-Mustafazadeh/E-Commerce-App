@@ -7,8 +7,13 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link, useNavigate } from "react-router-dom";
-const UserNavbar = ({}) => {
+const UserNavbar = ({setHandUsersId,setLocalStorageUserId,basketState}) => {
     
+
+
+
+  const navigate = useNavigate()
+
   return (
     <Box sx={{ flexGrow: 1 }} >
       <AppBar position="static" style={{backgroundColor:'blanchedalmond',marginBottom:'30px'}}>
@@ -27,10 +32,10 @@ const UserNavbar = ({}) => {
           </Typography>
             <Button color="inherit">
             <Link
-              style={{ textDecoration: "none", color: "white" }}
+              style={{ textDecoration: "none", color: "white" ,position: "relative" }}
               to={"/basket"}
             >
-              Basket
+              Basket <span className="localBask">{basketState}</span>
             </Link>
           </Button>
           <Button color="inherit">
@@ -91,8 +96,10 @@ const UserNavbar = ({}) => {
               Login
             </Link>
           </Button>
-          <Button color="inherit" onClick={()=>{
-
+          <Button  color="inherit" onClick={()=>{
+            setLocalStorageUserId(null)
+            setHandUsersId(null)
+            navigate("/userlogin")
           }}>
             Logout
           </Button>

@@ -1,0 +1,14 @@
+.localBask{
+    background-color: red;
+    border-radius: 100%;
+    height: 15px;
+    width: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
