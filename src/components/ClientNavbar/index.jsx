@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link, useNavigate } from "react-router-dom";
-const UserNavbar = () => {
+const UserNavbar = ({}) => {
     
   return (
     <Box sx={{ flexGrow: 1 }} >
@@ -74,6 +74,14 @@ const UserNavbar = () => {
               UserProducts
             </Link>
           </Button>
+          <Button color="inherit">
+            <Link
+              style={{ textDecoration: "none", color: "white" }}
+              to={"/usermessages"}
+            >
+              UserMessages
+            </Link>
+          </Button>
          
           <Button color="inherit">
             <Link
@@ -83,7 +91,9 @@ const UserNavbar = () => {
               Login
             </Link>
           </Button>
-          <Button color="inherit">
+          <Button color="inherit" onClick={()=>{
+
+          }}>
             Logout
           </Button>
          

@@ -19,45 +19,135 @@
       "username": "rena",
       "email": "rena@gmail.com",
       "password": "rena123",
-      "role": "super-admin "
+      "role": "super-admin"
+    },
+    {
+      "id": "stK7-GT5HMi_U6MkjFi7d",
+      "username": "nermin",
+      "password": "nermin123",
+      "createdAt": "2024-05-12T16:51:12.697Z",
+      "email": "l@mail.ru",
+      "profileImg": "https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg",
+      "balance": "40",
+      "role": "client",
+      "basketItems": []
+    },
+    {
+      "id": "L8xixXKeJri5VIuSGDH6d",
+      "username": "narmin",
+      "password": "narmin123",
+      "createdAt": "2024-05-12T16:52:44.544Z",
+      "email": "narmin@mail.ru",
+      "profileImg": "https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg",
+      "balance": "40",
+      "role": "client",
+      "basketItems": []
     }
   ],
-   "products":[
-      {
-        "id": 1,
-        "name": "Sale",
-        "salePrice": 10,
-        "costPrice": 8,
-        "createdAt": "2024-05-10",
-        "imgSrc": "https://img.freepik.com/free-vector/red-sale-price-tag-style-banner-design-template_1017-27328.jpg",
-        "discountPercentage": 10,
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "categoryId": 1,
-        "stockCount": 100
-      },
-      {
-        "id": 2,
-        "name": "Basket",
-        "salePrice": 20,
-        "costPrice": 15,
-        "createdAt": "2024-05-10",
-        "imgSrc": "https://img.freepik.com/free-photo/shopping-cart-with-red-basket-that-says-letter-r-it_1340-36189.jpg?size=626&ext=jpg",
-        "discountPercentage": 20,
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "categoryId": 2,
-        "stockCount": 50
-      },
-      {
-        "id": 3,
-        "name": "Price",
-        "salePrice": 40,
-        "costPrice": 10,
-        "createdAt": "2024-05-10",
-        "imgSrc":"https://m.media-amazon.com/images/I/61DecEGtKUL.jpg",
-        "discountPercentage": 40,
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "categoryId": 3,
-        "stockCount": 80
-      }
-    ]
+  "products": [
+    {
+      "id": "2",
+      "name": "Casio",
+      "salePrice": 200,
+      "costPrice": 600,
+      "createdAt": "2024-05-10",
+      "imgSrc": "https://www.casio.com/content/casio/locales/intl/en/products/news/2022/0728-gm-b2100/_jcr_content/root/responsivegrid/container_2122173774/container_copy_18229_2088153801/container_594435126/container/container/image.casiocoreimg.jpeg/1658811588920/img01.jpeg",
+      "discountPercentage": 20,
+      "description": "Usually, Casio watches are known for their durability, reliability, and functionality. They are often used in outdoor and sports activities, as well as in industrial and military settings. Casio watches are famous for the many unique features that make them useful in various locations.",
+      "categoryId": 2,
+      "stockCount": 50
+    },
+    {
+      "id": "3",
+      "name": "Rolex",
+      "salePrice": 40,
+      "costPrice": 10,
+      "createdAt": "2024-05-10",
+      "imgSrc": "https://www.bobswatches.com/rolex-blog/wp-content/uploads/2019/01/Rolex_Submariner_16610V_5D3_5211-2-Edit-2-1.jpg",
+      "discountPercentage": 40,
+      "description": "Rolex timepieces are the most reputable and renowned timepieces in the world today. Invented by Hans Wilsdorf in 1908 and branded under the iconic Rolex name in 1915, these watches epitomize timeless elegance and prestige among all luxury watches.",
+      "categoryId": 3,
+      "stockCount": 80
+    },
+    {
+      "id": "F9HBI48qXONxkKX_RzCW2",
+      "name": "tYG55",
+      "salePrice": "300",
+      "costPrice": "300",
+      "createdAt": "2024-05-12T16:26:56.983Z",
+      "imgSrc": "https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg",
+      "discountPercentage": 210,
+      "description": "tyghbtyhtghtyh",
+      "categoryId": "3",
+      "stockCount": "40"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "women"
+    },
+    {
+      "id": "2",
+      "name": "men"
+    },
+    {
+      "id": "3",
+      "name": "kids"
+    },
+    {
+      "id": "_GtVNzaAHDDJHoJtbrX1N",
+      "name": "baby"
+    }
+  ],
+  "messages": [
+    {
+      "id": "gaMmRl-60aArpICUQYlZS",
+      "fullName": "Ramin",
+      "email": "raminisrafilli@gmail.com",
+      "title": "test",
+      "message": "Ugurlu",
+      "createdAt": "2024-05-12T00:26:07.131Z"
+    },
+    {
+      "id": "bvnNGaQkesZK4NBvelYzR",
+      "fullName": "laman",
+      "email": "lmanmustafazad6@gmail.com",
+      "title": "xos gelmisiz",
+      "message": "kdjcnnsdc",
+      "createdAt": "2024-05-12T09:43:42.544Z"
+    },
+    {
+      "id": "u9H0ynUlAJAaazY-MQjeS",
+      "fullName": "laman",
+      "email": "lmanmustafazad6@gmail.com",
+      "title": "nhjbj",
+      "message": "jkbn",
+      "createdAt": "2024-05-12T09:45:54.103Z"
+    },
+    {
+      "id": "KFffwFZ1IBXjgWvyN4x2E",
+      "fullName": "firza",
+      "email": "lmanmustafazad6@gmail.com",
+      "title": "firuza",
+      "message": "ugurlu oldu",
+      "createdAt": "2024-05-12T10:02:17.107Z"
+    },
+    {
+      "id": "N1PTL0cu9FQ9LFDPc9MmP",
+      "fullName": "",
+      "email": "",
+      "title": "",
+      "message": "",
+      "createdAt": "2024-05-12T16:13:55.286Z"
+    },
+    {
+      "id": "mO_Kkb-1HmrlJFApzIgL9",
+      "fullName": "laman",
+      "email": "lmanmustafazad6@gmail.com",
+      "title": "salam",
+      "message": "jnkjnjn",
+      "createdAt": "2024-05-12T16:15:51.464Z"
+    }
+  ]
 }

@@ -12,30 +12,21 @@ import { useOutletContext } from "react-router";
 import { Link } from "react-router-dom";
 
 const UserProducts = () => {
-  const [
-    alluser,
-    setallUsers,
-    handUsersId,
-    sethandUsersId,
-    localStorageUserId,
-    setlocalStorageUserId,
-    products,
-    setProduct,
-  ] = useOutletContext();
+  const[messages, setMessages, alluser, setAllUsers, handUsersId, setHandUsersId, localStorageUserId, setLocalStorageUserId, userProduct, setUserProduct]= useOutletContext();
   const calculateDiscountedPrice = (salePrice, discountPercentage) => {
     const discountAmount = salePrice * (discountPercentage / 100);
     const discountedPrice = salePrice - discountAmount;
     return discountedPrice;
   };
-  const [ filteredProduct,setfilteredProduct] = useState(products)
+  const [filteredProduct,setfilteredProduct] = useState(userProduct)
    const handleSearch = (inpvalue)=>{
-    const filtered = products.filter((x)=>x.name.toLowerCase().trim().includes(inpvalue.toLowerCase().trim()))
+    const filtered = userProduct.filter((x)=>x.name.toLowerCase().trim().includes(inpvalue.toLowerCase().trim()))
     setfilteredProduct(filtered)
    }
 
    useEffect(()=>{
-    setfilteredProduct(products)
-   },[products])
+    setfilteredProduct(userProduct)
+   },[userProduct])
 
    const sortbyPrice = (value)=>{
     let sortedProduct = [...filteredProduct]

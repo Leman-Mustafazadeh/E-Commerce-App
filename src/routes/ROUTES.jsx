@@ -6,6 +6,7 @@ import AddCategory from "../pages/Admin/AddCategory";
 import AddProducts from "../pages/Admin/AddProducts";
 import Dashboard from "../pages/Admin/Dashboard";
 import Messages from "../pages/Admin/Messages";
+import MessageUser from "../pages/ClientPage/MessageUser"
 import Orders from "../pages/Admin/Orders";
 import UserRouter from "../pages/ClientPage/UserRouter";
 import Home from "../pages/ClientPage/Home";
@@ -42,6 +43,7 @@ export const ROUTES = [
         path: "user",
         element: <User />,
       },
+      
       {
         path: "userlogin",
         element: <UserLogin />,
@@ -53,6 +55,10 @@ export const ROUTES = [
       {
         path: "userproducts",
         element: <UserProducts />,
+      },
+      {
+        path: "usermessages",
+        element: <MessageUser/>,
       },
     ],
   },
@@ -66,11 +72,11 @@ export const ROUTES = [
       },
       {
         path: "categories",
-        element: <Categories />,
+        element: <Categories/>,
       },
       {
         path: "addcategory",
-        element: <AddCategory />,
+        element: <AddCategory/>,
       },
       {
         path: "adminusers",

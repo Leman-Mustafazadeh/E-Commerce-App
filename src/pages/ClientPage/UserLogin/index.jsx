@@ -6,9 +6,9 @@ import { toast } from 'react-toastify'
 import UserLoginSchema from '../../../validation/UserLogin'
 
 const UserLogin = () => {
-  const [alluser,setallUsers,handUsersId,sethandUsersId,localStorageUserId,setlocalStorageUserId] = useOutletContext()
+  const [messages, setMessages, alluser, setAllUsers, handUsersId, setHandUsersId, localStorageUserId, setLocalStorageUserId, userProduct, setUserProduct] = useOutletContext()
   const navigate = useNavigate()
-
+console.log(alluser);
   const formik = useFormik({
     initialValues:{
       username:'',
@@ -20,10 +20,10 @@ const UserLogin = () => {
       console.log(foundUser);
       if(foundUser){
         if(foundUser.role === 'client'){
-          sethandUsersId(foundUser.id)
-          setlocalStorageUserId(foundUser.id)
+          setHandUsersId(foundUser.id)
+          setLocalStorageUserId(foundUser.id)
           toast.success("User is logged in");
-          navigate('/')
+          navigate('/userproducts')
         } else {
           toast.error("Username or Password is incorrect")
         }

@@ -5,22 +5,18 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const Login = () => {
   const [admin, setAdmin] = useState({ username: "", password: "" });
-  const [users,setUsers,adminId,setAdminId,localStorageId,setlocalStorageId] = useOutletContext();
-    console.log(users);
+  const [users,setUsers,adminId,setAdminId,localStorageId,setlocalStorageId,adProducts,setadProduct] = useOutletContext();
+  
   const navigate = useNavigate();
   const foundAdmin = users.find((x) => x.username === admin.username && x.password === admin.password);
 
-  console.log(foundAdmin);
   const handleSubmit = (e) => {
     e.preventDefault();
     if (foundAdmin) {
-      console.log(foundAdmin);
-      console.log(adminId);
       if (foundAdmin.role === "admin") {
         setAdminId(foundAdmin.id);
-        setlocalStorageId(foundAdmin.id);
+        setlocalStorageId(foundAdmin);
         toast.success("Admin is LOggedin");
-        console.log("slaam");
         navigate("/admin");
       }
       else{

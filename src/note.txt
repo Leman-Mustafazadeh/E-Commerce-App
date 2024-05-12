@@ -1,0 +1,89 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "elnurxo",
+      "email": "elnur@gmail.com",
+      "password": "admin123",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "username": "laman",
+      "email": "laman@gmail.com",
+      "password": "laman123",
+      "role": "admin"
+    },
+    {
+      "id": "3",
+      "username": "rena",
+      "email": "rena@gmail.com",
+      "password": "rena123",
+      "role": "super-admin"
+    },
+    {
+      "id": "3HkTjiO7xi_zjj97hUDn6",
+      "username": "raminisrafilli",
+      "password": "123456",
+      "createdAt": "2024-05-11T12:18:23.812Z",
+      "email": "leman@gmail.com",
+      "profileImg": "https://anews.az/az/politika/?page=1",
+      "balance": "1111",
+      "role": "client",
+      "basketItems": []
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Watch",
+      "salePrice": 100,
+      "costPrice": 400,
+      "createdAt": "2024-05-10",
+      "imgSrc": "https://www.shutterstock.com/image-vector/clock-vector-flat-illustration-isolated-600nw-1719717589.jp",
+      "discountPercentage": 10,
+      "description": "A watch is a portable timepiece that is designed to be worn on the wrist or carried in the pocket. The movement of a watch is driven either by a spring or by electricity. Along with clocks, watches are the most common devices for measuring time.",
+      "categoryId": 1,
+      "stockCount": 100
+    },
+    {
+      "id": "2",
+      "name": "Casio",
+      "salePrice": 200,
+      "costPrice": 600,
+      "createdAt": "2024-05-10",
+      "imgSrc": "https://www.casio.com/content/casio/locales/intl/en/products/news/2022/0728-gm-b2100/_jcr_content/root/responsivegrid/container_2122173774/container_copy_18229_2088153801/container_594435126/container/container/image.casiocoreimg.jpeg/1658811588920/img01.jpeg",
+      "discountPercentage": 20,
+      "description": "Usually, Casio watches are known for their durability, reliability, and functionality. They are often used in outdoor and sports activities, as well as in industrial and military settings. Casio watches are famous for the many unique features that make them useful in various locations.",
+      "categoryId": 2,
+      "stockCount": 50
+    },
+    {
+      "id": "3",
+      "name": "Rolex",
+      "salePrice": 40,
+      "costPrice": 10,
+      "createdAt": "2024-05-10",
+      "imgSrc": "https://www.bobswatches.com/rolex-blog/wp-content/uploads/2019/01/Rolex_Submariner_16610V_5D3_5211-2-Edit-2-1.jpg",
+      "discountPercentage": 40,
+      "description": "Rolex timepieces are the most reputable and renowned timepieces in the world today. Invented by Hans Wilsdorf in 1908 and branded under the iconic Rolex name in 1915, these watches epitomize timeless elegance and prestige among all luxury watches.",
+      "categoryId": 3,
+      "stockCount": 80
+    }
+  ],
+
+  "categories":[
+    {
+      "id":"1",
+      "name":"women"
+    },
+    {
+      "id":"2",
+      "name":"men"
+    },
+    {
+      "id":"3",
+      "name":"kids"
+    }
+  ]
+}

@@ -6,25 +6,28 @@ import { getAll } from "../../API";
 import endpoints from "../../API/base";
 
 const UserRouter = () => {
-  const [localStorageUserId,setlocalStorageUserId] = useLocalStorage("UserId",null)
-  const localUser = JSON.parse(localStorage.getItem("UserId"))
-  const [handUsersId,sethandUsersId] = useState(localUser? localUser: null)
-  const [alluser,setallUsers] = useState([])
-const [product,setProduct] = useState([])
-  useEffect(()=>{
-    getAll(endpoints.users).then((res)=>{
-      setallUsers(res.data)
-    })
-    getAll(endpoints.products).then((res)=>{
-      setProduct(res.data)
-    })
-  },[])
-  console.log(product);
-  return (
+  const [localStorageUserId, setLocalStorageUserId] = useLocalStorage("UserId", null);
+  const localUser = JSON.parse(localStorage.getItem("UserId"));
+  const [handUsersId, setHandUsersId] = useState(localUser ? localUser : null);
+  const [alluser, setAllUsers] = useState([]);
+  const [userProduct, setUserProduct] = useState([]);
+  const [messages, setMessages] = useState([]);
 
+  useEffect(() => {
+    getAll(endpoints.users).then((res) => {
+      setAllUsers(res.data);
+    });
+    getAll(endpoints.products).then((res) => {
+      setUserProduct(res.data);
+    });
+  }, []);
+
+  console.log(userProduct);
+
+  return (
     <div>
       <UserNavbar />
-      <Outlet context={[alluser,setallUsers,handUsersId,sethandUsersId,localStorageUserId,setlocalStorageUserId,product,setProduct]} />
+      <Outlet context={[messages, setMessages, alluser, setAllUsers, handUsersId, setHandUsersId, localStorageUserId, setLocalStorageUserId, userProduct, setUserProduct]} />
     </div>
   );
 };

@@ -53,6 +53,7 @@ export async function put(endpoint, id, payload) {
 
 //patch
 export async function patch(endpoint, id, payload) {
+  
   try {
     const response = await axios.patch(BASE_URL + endpoint + `/${id}`, payload);
     return response;
