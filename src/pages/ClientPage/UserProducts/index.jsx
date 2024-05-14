@@ -16,10 +16,10 @@ import endpoints from "../../../API/base";
 
 const UserProducts = () => {
 
-  
-  
 
-  const [localBasket,setBasketState,messages, setMessages, alluser, setAllUsers, handUsersId, setHandUsersId, localStorageUserId, setLocalStorageUserId, userProduct, setUserProduct]= useOutletContext();
+
+
+  const [localBasket, setBasketState, messages, setMessages, alluser, setAllUsers, handUsersId, setHandUsersId, localStorageUserId, setLocalStorageUserId, userProduct, setUserProduct] = useOutletContext();
   const [basket, setBasket] = useState(localBasket ? localBasket : [])
 
   const calculateDiscountedPrice = (salePrice, discountPercentage) => {
@@ -58,15 +58,10 @@ const UserProducts = () => {
     setfilteredProduct(sortName)
   }
 
-
-
-
-
-
   /* busket function */
 
   const getBusket = (id) => {
-   
+
     userProduct.map((item) => {
 
       if (id === item.id) {
@@ -75,15 +70,15 @@ const UserProducts = () => {
           basket.map(pro => {
             if (pro.id == id) {
               pro.count++
-              patch(endpoints.products,id,pro);
+              patch(endpoints.products, id, pro);
               return pro
             }
           })
-         
+
           setBasket(basket)
           localStorage.setItem('basket', JSON.stringify(basket))
         } else {
-          
+
           setBasket([...basket, item]);
           setBasketState(count => count + 1);
         }
@@ -93,9 +88,7 @@ const UserProducts = () => {
     })
 
   }
-
-
-
+  console.log(filteredProduct);
 
   return (
     <>
@@ -112,7 +105,7 @@ const UserProducts = () => {
       </select>
 
       <Grid container spacing={2} style={{ marginTop: '50px' }}>
-        {filteredProduct.map((el) => (
+        {filteredProduct && filteredProduct.map((el) => (
           <Grid item xs={12} sm={6} md={4} lg={3} key={el.id}>
             <Card>
               <CardActionArea>

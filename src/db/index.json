@@ -46,17 +46,28 @@
   ],
   "products": [
     {
+      "id": "1",
+      "name": "Watch",
+      "salePrice": 100,
+      "costPrice": "40",
+      "createdAt": "2024-05-14T09:03:57.255Z",
+      "imgSrc": "https://www.shutterstock.com/image-vector/clock-vector-flat-illustration-isolated-600nw-1719717589.jp",
+      "discountPercentage": 90,
+      "description": "A watch is a portable timepiece that is designed to be worn on the wrist or carried in the pocket. The movement of a watch is driven either by a spring or by electricity. Along with clocks, watches are the most common devices for measuring time.",
+      "categoryId": 1,
+      "stockCount": 1009
+    },
+    {
       "id": "2",
       "name": "Casio",
       "salePrice": 200,
       "costPrice": 600,
-      "createdAt": "2024-05-10",
+      "createdAt": "2024-05-14T08:54:01.947Z",
       "imgSrc": "https://www.casio.com/content/casio/locales/intl/en/products/news/2022/0728-gm-b2100/_jcr_content/root/responsivegrid/container_2122173774/container_copy_18229_2088153801/container_594435126/container/container/image.casiocoreimg.jpeg/1658811588920/img01.jpeg",
-      "discountPercentage": 20,
+      "discountPercentage": 160,
       "description": "Usually, Casio watches are known for their durability, reliability, and functionality. They are often used in outdoor and sports activities, as well as in industrial and military settings. Casio watches are famous for the many unique features that make them useful in various locations.",
       "categoryId": 2,
-      "stockCount": 50,
-      "count": 6
+      "stockCount": 509
     },
     {
       "id": "3",
@@ -68,27 +79,13 @@
       "discountPercentage": 40,
       "description": "Rolex timepieces are the most reputable and renowned timepieces in the world today. Invented by Hans Wilsdorf in 1908 and branded under the iconic Rolex name in 1915, these watches epitomize timeless elegance and prestige among all luxury watches.",
       "categoryId": 3,
-      "stockCount": 80,
-      "count": 5
-    },
-    {
-      "id": "F9HBI48qXONxkKX_RzCW2",
-      "name": "tYG55",
-      "salePrice": "300",
-      "costPrice": "300",
-      "createdAt": "2024-05-12T16:26:56.983Z",
-      "imgSrc": "https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg",
-      "discountPercentage": 210,
-      "description": "tyghbtyhtghtyh",
-      "categoryId": "3",
-      "stockCount": "40",
-      "count": 3
+      "stockCount": 80
     }
   ],
   "categories": [
     {
       "id": "1",
-      "name": "women"
+      "name": "womenn"
     },
     {
       "id": "2",
