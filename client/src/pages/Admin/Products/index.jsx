@@ -9,7 +9,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { useOutletContext } from "react-router";
 import { Button, FormGroup, TextField } from "@mui/material";
-import { deleteOne, put } from "../../../API";
+import { deleteOne, patch, } from "../../../API";
 import endpoints from "../../../API/base";
 import Swal from "sweetalert2";
 import Box from "@mui/material/Box";
@@ -17,10 +17,14 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { useState } from "react";
 import { useFormik } from "formik";
-import Product from "../../../classes/product";
 import { productValidation } from "../../../validation/Product";
+import { DataContext } from '../../../providers/DataProvider'
+import { toast } from "react-toastify";
+import Product from "../../../classes/product";
 const Products = () => {
   const [users,setUsers,adminId,setAdminId,localStorageId,setlocalStorageId,adProducts,setadProduct] = useOutletContext();
+  const { selectedProduct, setSelectedProduct } = React.useContext(DataContext);
+
 
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -64,7 +68,11 @@ const Products = () => {
   };
 
   const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
+  const handleOpen = (id) => {
+    const found = adProducts.find((x)=>x.id==id);
+    setSelectedProduct(found);
+    setOpen(true)
+  };
   const handleClose = () => setOpen(false);
 
   const style = {
@@ -80,38 +88,35 @@ const Products = () => {
   };
 
   const formik = useFormik({
-    initialValues: {
-      name: "",
-      salePrice: "",
-      costPrice: "",
-      imgSrc: "",
-      discountPercentage: "",
-      description: "",
-      categoryId: "",
-      stockCount: "",
+      enableReinitialize: true,
+     initialValues: {
+      name: selectedProduct?.name || "",
+      salePrice: selectedProduct?.salePrice || "",
+      costPrice: selectedProduct?.costPrice || "",
+      imgSrc: selectedProduct?.imgSrc || "",
+      discountPercentage: selectedProduct?.discountPercentage || "",
+      description: selectedProduct?.description || "",
+      categoryId:selectedProduct?.categoryId ||  "",
+      stockCount: selectedProduct?.stockCount || "",
     },
-    onSubmit: values => {
+    onSubmit: async (values) => {
       console.log(values);
-      
+      console.log(selectedProduct);
       const newProduct = new Product(values.name, values.salePrice, values.costPrice, values.imgSrc, values.discountPercentage, values.description, values.categoryId, values.stockCount)
-      /* post(endpoints.products, newProduct) */
-      /* formik.resetForm() */
-     /*  toast.success("product added") */
-      setadProduct((currentproducts) => {
-        return [...currentproducts, newProduct];
-      });
-
-     
+     console.log(newProduct);
+     console.log(newProduct.id);
+      await patch(endpoints.products,selectedProduct.id, newProduct).then((res)=>{
+        console.log("res",res.data);
+        formik.resetForm() 
+        toast.success("product added")
+        handleClose()
+        //  setadProduct((currentproducts) => {
+        //    return [...currentproducts, newProduct];
+        //  });
+      })
     },
-    /* validationSchema: productValidation */
   })
-/* 
-  console.log(editProduct); */
- /*  const handleSubmit = (product) => {
-    console.log(product);
-    // put(endpoints.products,id,value)
-    handleClose();
-  }; */
+
   return (
     <>
       <TableContainer component={Paper}>
@@ -155,7 +160,8 @@ const Products = () => {
                 </StyledTableCell>
                 <StyledTableCell align="right">
                   {" "}
-                  <Button variant="contained" onClick={handleOpen}>
+                  <Button variant="contained" onClick={()=>{
+                    handleOpen(row.id)}}>
                     Edit{" "}
                   </Button>
                 </StyledTableCell>
@@ -170,8 +176,8 @@ const Products = () => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box onSubmit={formik.handleSubmit} sx={style} style={{ gap: "5px" }}>
-        <FormGroup style={{ display: "flex", margin: "30px auto", gap: "20px" }}>
+        <Box  sx={style}  style={{ gap: "5px" }} >
+        <form style={{ display: "flex", flexDirection: "column", margin: "30px auto", gap: "20px" }} onSubmit={formik.handleSubmit} >
           <TextField
             name="name"
             id="outlined-basic1"
@@ -180,7 +186,7 @@ const Products = () => {
             label="name"
             variant="outlined"
             value={formik.values.name}
-            onChange={() =>formik.handleChange}
+            onChange={formik.handleChange}
           />
           <TextField
             name="salePrice"
@@ -190,7 +196,7 @@ const Products = () => {
             label="salePrice"
             variant="outlined"
             value={formik.values.salePrice}
-            onChange={() =>formik.handleChange}
+            onChange={formik.handleChange}
           />
           <TextField
             name="costPrice"
@@ -200,7 +206,7 @@ const Products = () => {
             label="costPrice"
             variant="outlined"
             value={formik.values.costPrice}
-            onChange={()=>formik.handleChange}
+            onChange={formik.handleChange}
           />
           <TextField
             name="description"
@@ -210,7 +216,7 @@ const Products = () => {
             label="description"
             variant="outlined"
             value={formik.values.description}
-            onChange={()=>formik.handleChange}
+            onChange={formik.handleChange}
           />
           <TextField
             name="imgSrc"
@@ -220,22 +226,22 @@ const Products = () => {
             label="imgSrc"
             variant="outlined"
             value={formik.values.imgSrc}
-            onChange={() =>formik.handleChange}
+            onChange={formik.handleChange}
           />
           <TextField
             name="stockCount"
             id="outlined-basic6"
             style={{ width: "100%" }}
-            type="url"
+            type="number"
             label="stockCount"
             variant="outlined"
             value={formik.values.stockCount}
-            onChange={() =>formik.handleChange}
+            onChange={formik.handleChange}
           />
           <Button type="submit" variant="contained">
             Submit
           </Button>
-          </FormGroup>
+          </form>
         </Box>
       </Modal>
     </>

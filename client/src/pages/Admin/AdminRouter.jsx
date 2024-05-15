@@ -14,7 +14,7 @@ const AdminRouter = () => {
     const [messag,setMessag] = useState([])
   const [category,setCategory] = useState([])
 
-    const navigate = useNavigate()
+  const navigate = useNavigate()
 
     useEffect(() => {
         getAll(endpoints.users).then((res) => {

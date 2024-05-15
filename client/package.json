@@ -18,6 +18,7 @@
     "@mui/styled-engine-sc": "^6.0.0-alpha.18",
     "@mui/x-charts": "^7.4.0",
     "antd": "^5.17.0",
+    "axios": "^1.6.8",
     "formik": "^2.4.6",
     "json-server": "^1.0.0-alpha.23",
     "nanoid": "^5.0.7",
