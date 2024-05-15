@@ -14,7 +14,7 @@ const UserProductDetail = () => {
 
   useEffect(()=>{
     getOne(endpoints.products,id).then((res)=>{
-      setGetData(res.data)
+      setGetData(res.data.data)
     })
   },[id])
  

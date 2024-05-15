@@ -16,10 +16,10 @@ const UserRouter = () => {
   const [basketState , setBasketState] = useState(localBasket ? localBasket.length : 0);
   useEffect(() => {
     getAll(endpoints.users).then((res) => {
-      setAllUsers(res.data);
+      setAllUsers(res.data.data);
     });
     getAll(endpoints.products).then((res) => {
-      setUserProduct(res.data);
+      setUserProduct(res.data.data);
     });
   }, []);
 

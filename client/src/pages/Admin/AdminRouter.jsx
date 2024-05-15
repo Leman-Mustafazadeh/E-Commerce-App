@@ -18,16 +18,16 @@ const AdminRouter = () => {
 
     useEffect(() => {
         getAll(endpoints.users).then((res) => {
-            setUsers(res.data)
+            setUsers(res.data.data)
         })
         getAll(endpoints.products).then((res) => [
-            setadProduct(res.data)
+            setadProduct(res.data.data)
         ])
         getAll(endpoints.messages).then((res)=>{
-            setMessag(res.data)
+            setMessag(res.data.data)
         })
         getAll(endpoints.categories).then((res)=>{
-            setCategory(res.data)
+            setCategory(res.data.data)
           })
        
         if (localStorageId === null) {

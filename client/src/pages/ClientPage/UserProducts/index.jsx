@@ -141,7 +141,7 @@ const UserProducts = () => {
                     )}
                     )
                   </Typography>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: "23px", fontFamily: "sans-serif" }}>                  <Button color="secondary"><Link to={"/userproductdetail/" + el.id} style={{ backgroundColor: 'gray', padding: '3px 10px', textDecoration: 'none', color: 'white' }}>Detail</Link></Button>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: "23px", fontFamily: "sans-serif" }}>                  <Button color="secondary"><Link to={"/userproductdetail/" + el._id} style={{ backgroundColor: 'gray', padding: '3px 10px', textDecoration: 'none', color: 'white' }}>Detail</Link></Button>
                     {handUsersId ? <Button onClick={() => getBusket(el.id)} style={{ border: "2px solid blue" }} color="primary"><ShoppingBasketIcon /></Button> : <div>Alis ucun login lazimdir</div>}</div>
                 </CardContent>
               </CardActionArea>
