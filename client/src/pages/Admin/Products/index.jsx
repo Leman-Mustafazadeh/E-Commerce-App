@@ -56,7 +56,7 @@ const Products = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         deleteOne(endpoints.products, id);
-        const del = adProducts.filter((x) => x.id != id);
+        const del = adProducts.filter((x) => x._id != id);
         setadProduct(del);
         Swal.fire({
           title: "Deleted!",
@@ -69,7 +69,7 @@ const Products = () => {
 
   const [open, setOpen] = React.useState(false);
   const handleOpen = (id) => {
-    const found = adProducts.find((x)=>x.id==id);
+    const found = adProducts.find((x)=>x._id==id);
     setSelectedProduct(found);
     setOpen(true)
   };
@@ -104,8 +104,8 @@ const Products = () => {
       console.log(selectedProduct);
       const newProduct = new Product(values.name, values.salePrice, values.costPrice, values.imgSrc, values.discountPercentage, values.description, values.categoryId, values.stockCount)
      console.log(newProduct);
-     console.log(newProduct.id);
-      await patch(endpoints.products,selectedProduct.id, newProduct).then((res)=>{
+     console.log(newProduct._id);
+      await patch(endpoints.products,selectedProduct._id, newProduct).then((res)=>{
         console.log("res",res.data);
         formik.resetForm() 
         toast.success("product added")
@@ -153,7 +153,7 @@ const Products = () => {
                 <StyledTableCell align="right">
                   <Button
                     variant="contained"
-                    onClick={() => handleDelete(row.id)}
+                    onClick={() => handleDelete(row._id)}
                   >
                     Delete
                   </Button>
@@ -161,7 +161,7 @@ const Products = () => {
                 <StyledTableCell align="right">
                   {" "}
                   <Button variant="contained" onClick={()=>{
-                    handleOpen(row.id)}}>
+                    handleOpen(row._id)}}>
                     Edit{" "}
                   </Button>
                 </StyledTableCell>
