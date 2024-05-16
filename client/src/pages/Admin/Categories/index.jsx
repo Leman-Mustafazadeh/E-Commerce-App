@@ -116,7 +116,7 @@ const Categories = () => {
           </TableHead>
           <TableBody>
             {category.map((row) => (
-              <StyledTableRow key={row.id}>
+              <StyledTableRow key={row._id}>
                 <StyledTableCell component="th" scope="row">
                   {row.id}
                 </StyledTableCell>
